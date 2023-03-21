@@ -1,0 +1,13 @@
+{% load static %} <!-- Load static files for CSS styles -->
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Link to CSS file -->
+</head>
+<div class="centered-container"> <!-- Create a container div to centre the form -->
+    <form method="post"> <!-- Create a form that uses the POST method to submit data -->
+        {% csrf_token %} <!-- Add a CSRF token to prevent cross-site request forgery -->
+        <table> <!-- Create a table to display the form fields -->
+            {{ form.as_table }} <!-- Render form fields as a table -->
+        </table>
+        <button type="submit">Save</button> <!-- Create a button to submit the form data -->
+    </form>
+</div>

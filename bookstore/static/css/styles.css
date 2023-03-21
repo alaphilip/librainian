@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.centered-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+body {
+    background-color: #222;
+    color: #f0f0f0;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+a.add-book-link {
+    color: #5865F2;
+    display: block;
+    margin-top: 20px;
+  }  
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #444;
+    color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+}
+
+emoji {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.book-table {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-collapse: collapse;
+}
+
+.book-table th,
+.book-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.book-table th {
+    background-color: #f2f2f2;
+}

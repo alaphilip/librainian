@@ -1,0 +1,59 @@
+{% load static %} <!-- Load static files - CSS -->
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<div class="centered-container">
+    <header>
+<!-- Display the title and subtitle of the web app -->
+        <h1>📚 Book Library Manager v1.0 📚</h1>
+        <h2 style="font-style: italic; color: #5865F2;">You can use this web app to manage the books you have in your bookstore or library. Add books at the bottom.</h2>
+    </header>
+    <body>
+<!-- Display a table to show the book information -->
+        <table class="book-table">
+            <thead>
+                <tr>
+                    <tr>
+<!-- Set the table headers and colour them -->
+                        <th style="color: #5865F2;">ID</th>
+                        <th style="color: #5865F2;">Title</th>
+                        <th style="color: #5865F2;">Author</th>
+                        <th style="color: #5865F2;">Qty</th>
+                        <th style="color: #5865F2;">Spine Colour</th>
+                        <th style="color: #5865F2;">Condition</th>
+                        <th style="color: #5865F2;">Actions</th>
+                    </tr>                    
+                </tr>
+            </thead>
+            <tbody>
+<!-- Loop through the books and display their information in the table -->
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.qty }}</td>
+                        <td>{{ book.spine_colour }}</td>
+                        <td>{{ book.condition }}</td>
+                        <td>
+<!-- Add links to update and delete each book -->
+                            <a href="{% url 'update_book' book.id %}">Update</a>
+                            <a href="{% url 'delete_book' book.id %}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+<!-- Add a link to the 'Add Book' page and a search form -->
+        <a href="{% url 'add_book' %}" class="add-book-link">Add a book</a>
+        <form method="get" action="{% url 'search_books' %}">
+            <input type="text" name="q" placeholder="Search books...">
+            <button type="submit">Search</button>
+        </form>
+    </body>    
+    <footer>
+<!-- Add links to the developer's Twitter and GitHub profiles -->
+        <a href="https://twitter.com/philcodes" target="_blank">Twitter: @philcodes</a>
+        <a href="https://github.com/alaphilip" target="_blank">Github: @alaphilip</a>
+    </footer>
+</div>
